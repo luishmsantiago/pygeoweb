@@ -9,7 +9,6 @@ dependencies = [
     "geopy>=2.4.1",
     "openpyxl>=3.1.5",
     "pandas>=3.0.1",
-    "pyinstaller>=6.19.0",
     "shapely>=2.1.2",
     "streamlit>=1.30.0",
     "streamlit-folium>=0.26.2",
