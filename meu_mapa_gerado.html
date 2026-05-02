@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_56888e870c269d4b7bcc29db1a4cfe86 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_56888e870c269d4b7bcc29db1a4cfe86" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_56888e870c269d4b7bcc29db1a4cfe86 = L.map(
+                "map_56888e870c269d4b7bcc29db1a4cfe86",
+                {
+                    center: [-26.978, -48.634688],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5d4797fc10e8833f8e0554177f1ff87d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5d4797fc10e8833f8e0554177f1ff87d.addTo(map_56888e870c269d4b7bcc29db1a4cfe86);
+        
+    
+            var marker_8367432f226396a3933fa41c087a2ac8 = L.marker(
+                [-26.978, -48.634688],
+                {
+}
+            ).addTo(map_56888e870c269d4b7bcc29db1a4cfe86);
+        
+    
+        var popup_674cbf970fa4b2a2ef30b8344845fdcd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1df8b385e00d4ee9d7c914ecb2c51d1a = $(`<div id="html_1df8b385e00d4ee9d7c914ecb2c51d1a" style="width: 100.0%; height: 100.0%;">Roda gigante no Pontal Norte</div>`)[0];
+                popup_674cbf970fa4b2a2ef30b8344845fdcd.setContent(html_1df8b385e00d4ee9d7c914ecb2c51d1a);
+            
+        
+
+        marker_8367432f226396a3933fa41c087a2ac8.bindPopup(popup_674cbf970fa4b2a2ef30b8344845fdcd)
+        ;
+
+        
+    
+    
+            marker_8367432f226396a3933fa41c087a2ac8.bindTooltip(
+                `<div>
+                     Clique para ver mais
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4797442f96f16a20c07ef3a6fd25ab52 = L.marker(
+                [-27.004974, -48.618642],
+                {
+}
+            ).addTo(map_56888e870c269d4b7bcc29db1a4cfe86);
+        
+    
+        var popup_5e3ad574c71e9f07122d1599619b1b1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc0810e723fbeb4e46c4571862918874 = $(`<div id="html_fc0810e723fbeb4e46c4571862918874" style="width: 100.0%; height: 100.0%;">Aquário na Barra Sul</div>`)[0];
+                popup_5e3ad574c71e9f07122d1599619b1b1d.setContent(html_fc0810e723fbeb4e46c4571862918874);
+            
+        
+
+        marker_4797442f96f16a20c07ef3a6fd25ab52.bindPopup(popup_5e3ad574c71e9f07122d1599619b1b1d)
+        ;
+
+        
+    
+    
+            marker_4797442f96f16a20c07ef3a6fd25ab52.bindTooltip(
+                `<div>
+                     Clique para ver mais
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+
+        function geo_json_f935c2bbc3b9a7f5266df2f98af84f77_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_f935c2bbc3b9a7f5266df2f98af84f77 = L.geoJson(null, {
+                onEachFeature: geo_json_f935c2bbc3b9a7f5266df2f98af84f77_onEachFeature,
+            
+            ...{
+}
+        });
+
+        function geo_json_f935c2bbc3b9a7f5266df2f98af84f77_add (data) {
+            geo_json_f935c2bbc3b9a7f5266df2f98af84f77
+                .addData(data);
+        }
+            geo_json_f935c2bbc3b9a7f5266df2f98af84f77_add({"coordinates": [[-48.6355, -26.9855], [-48.6322, -26.9855]], "type": "LineString"});
+        geo_json_f935c2bbc3b9a7f5266df2f98af84f77.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_f935c2bbc3b9a7f5266df2f98af84f77.bindTooltip(
+                `<div>
+                     Trecho da Av. Central
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_f935c2bbc3b9a7f5266df2f98af84f77.addTo(map_56888e870c269d4b7bcc29db1a4cfe86);
+        
+    
+            var marker_8b132c29a9c35e1315340c71f1451c03 = L.marker(
+                [-27.005, -48.62],
+                {
+}
+            ).addTo(map_56888e870c269d4b7bcc29db1a4cfe86);
+        
+    
+        var popup_9a940888ca5676e987b91207614ccdd9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_787b6b8d68d6b31117e12170b281978b = $(`<div id="html_787b6b8d68d6b31117e12170b281978b" style="width: 100.0%; height: 100.0%;">Estação Mata Atlântica</div>`)[0];
+                popup_9a940888ca5676e987b91207614ccdd9.setContent(html_787b6b8d68d6b31117e12170b281978b);
+            
+        
+
+        marker_8b132c29a9c35e1315340c71f1451c03.bindPopup(popup_9a940888ca5676e987b91207614ccdd9)
+        ;
+
+        
+    
+    
+            marker_8b132c29a9c35e1315340c71f1451c03.bindTooltip(
+                `<div>
+                     Clique para ver mais
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+
+        function geo_json_9052ce31a8adc1313d5311677c4843b5_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_9052ce31a8adc1313d5311677c4843b5 = L.geoJson(null, {
+                onEachFeature: geo_json_9052ce31a8adc1313d5311677c4843b5_onEachFeature,
+            
+            ...{
+}
+        });
+
+        function geo_json_9052ce31a8adc1313d5311677c4843b5_add (data) {
+            geo_json_9052ce31a8adc1313d5311677c4843b5
+                .addData(data);
+        }
+            geo_json_9052ce31a8adc1313d5311677c4843b5_add({"coordinates": [[[-48.631, -26.986], [-48.63, -26.986], [-48.63, -26.987], [-48.631, -26.987], [-48.631, -26.986]]], "type": "Polygon"});
+        geo_json_9052ce31a8adc1313d5311677c4843b5.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_9052ce31a8adc1313d5311677c4843b5.bindTooltip(
+                `<div>
+                     Polígono de teste na orla
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_9052ce31a8adc1313d5311677c4843b5.addTo(map_56888e870c269d4b7bcc29db1a4cfe86);
+        
+</script>
+</html>
