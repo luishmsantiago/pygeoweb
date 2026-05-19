@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import folium
-from streamlit_folium import st_folium
+import streamlit.components.v1 as components
 from shapely import wkt
 from geopy.geocoders import ArcGIS 
 import requests
@@ -12,12 +12,9 @@ import re
 st.set_page_config(page_title="Table2Geo", layout="wide")
 st.title("📍 Table2Geo Web - Versão Streamlit")
 
-# Inicializa o geocodificador (ArcGIS para pontos)
 geolocator = ArcGIS(user_agent="table2geo_app")
 
-# ==========================================
 # BARRA LATERAL (CONFIGURAÇÕES)
-# ==========================================
 with st.sidebar:
     st.header("Configurações")
     arquivo = st.file_uploader("1. Carregar Planilha", type=["xlsx", "csv"])
@@ -45,11 +42,9 @@ with st.sidebar:
         # Botão principal
         btn_gerar = st.button("Gerar Mapa", use_container_width=True)
 
-# ==========================================
 # LÓGICA DE PROCESSAMENTO (Roda só ao clicar no botão gerar)
-# ==========================================
 if arquivo and btn_gerar:
-    st.info("Processando dados e buscando coordenadas... Aguarde!")
+    inform = st.info("Processando dados e buscando coordenadas... Aguarde!")
     
     m = folium.Map(location=[0, 0], zoom_start=2)
     sucessos = 0
@@ -149,7 +144,7 @@ if arquivo and btn_gerar:
             
         porcentagem = (i + 1) / len(df)
         progress_bar.progress(porcentagem)
-        status_text.text(f"Processando linha {i+1} de {len(df)}...")
+        status = status_text.text(f"Processando linha {i+1} de {len(df)}...")
         
     if bounds:
         m.fit_bounds(bounds)
@@ -157,16 +152,22 @@ if arquivo and btn_gerar:
     # SALVA NA MEMÓRIA DA PÁGINA
     st.session_state['mapa_obj'] = m
     st.session_state['mapa_html'] = m.get_root().render()
-    st.success(f"Processamento concluído! {sucessos} itens desenhados com sucesso.")
+    concluido = st.success(f"Processamento concluído! {sucessos} itens desenhados com sucesso.")
 
-# ==========================================
+    # LIMPA STATUS
+    time.sleep(2)
+    inform.empty()
+    progress_bar.empty()
+    status.empty()
+    concluido.empty()
+
 # ÁREA DE RENDERIZAÇÃO (Sempre visível se o mapa existir na memória)
-# ==========================================
-if 'mapa_obj' in st.session_state:
-    # 1. Exibe o mapa (travado para não recarregar à toa)
-    st_folium(st.session_state['mapa_obj'], width=1000, height=600, returned_objects=[])
+if 'mapa_html' in st.session_state:
     
-    # 2. Exibe o botão de Download que não quebra o código
+    # 1. Exibe o mapa lendo o HTML puro (Indestrutível contra reruns do Streamlit)
+    components.html(st.session_state['mapa_html'], height=600)
+    
+    # 2. Exibe o botão de Download
     st.download_button(
         label="📥 Baixar Mapa em HTML", 
         data=st.session_state['mapa_html'], 
