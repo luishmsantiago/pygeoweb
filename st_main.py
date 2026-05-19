@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import folium
-from streamlit_folium import st_folium
+import streamlit.components.v1 as components
 from shapely import wkt
 from geopy.geocoders import ArcGIS 
 import requests
@@ -162,11 +162,12 @@ if arquivo and btn_gerar:
     concluido.empty()
 
 # ÁREA DE RENDERIZAÇÃO (Sempre visível se o mapa existir na memória)
-if 'mapa_obj' in st.session_state:
-    # 1. Exibe o mapa (travado para não recarregar à toa)
-    st_folium(st.session_state['mapa_obj'], width=1000, height=600, returned_objects=[])
+if 'mapa_html' in st.session_state:
     
-    # 2. Exibe o botão de Download que não quebra o código
+    # 1. Exibe o mapa lendo o HTML puro (Indestrutível contra reruns do Streamlit)
+    components.html(st.session_state['mapa_html'], height=600)
+    
+    # 2. Exibe o botão de Download
     st.download_button(
         label="📥 Baixar Mapa em HTML", 
         data=st.session_state['mapa_html'], 
