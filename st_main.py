@@ -12,9 +12,12 @@ import re
 st.set_page_config(page_title="Table2Geo", layout="wide")
 st.title("📍 Table2Geo Web - Versão Streamlit")
 
+# Inicializa o geocodificador ( ArcGIS para pontos )
 geolocator = ArcGIS(user_agent="table2geo_app")
 
+# ==========================================
 # BARRA LATERAL (CONFIGURAÇÕES)
+# ==========================================
 with st.sidebar:
     st.header("Configurações")
     arquivo = st.file_uploader("1. Carregar Planilha", type=["xlsx", "csv"])
@@ -42,7 +45,9 @@ with st.sidebar:
         # Botão principal
         btn_gerar = st.button("Gerar Mapa", use_container_width=True)
 
+# ==========================================
 # LÓGICA DE PROCESSAMENTO (Roda só ao clicar no botão gerar)
+# ==========================================
 if arquivo and btn_gerar:
     inform = st.info("Processando dados e buscando coordenadas... Aguarde!")
     
